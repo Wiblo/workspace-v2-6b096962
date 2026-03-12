@@ -22,24 +22,6 @@ export interface FAQSectionProps {
   className?: string
 }
 
-/**
- * FAQ section with accordion and built-in JSON-LD schema.
- * Automatically generates FAQPage structured data for SEO.
- *
- * @example
- * // Using default FAQs from lib/data/faqs.ts
- * <FAQSection />
- *
- * @example
- * // With custom FAQs
- * <FAQSection
- *   title="Common Questions"
- *   items={[
- *     { id: "1", question: "How does it work?", answer: "..." },
- *     { id: "2", question: "What's included?", answer: "..." },
- *   ]}
- * />
- */
 export function FAQSection({
   title = "Frequently Asked Questions",
   subtitle = "Find answers to common questions about our services and what to expect.",
@@ -61,7 +43,7 @@ export function FAQSection({
   }
 
   return (
-    <SectionWrapper className={cn("bg-background", className)}>
+    <SectionWrapper className={cn("bg-transparent", className)}>
       {/* JSON-LD Schema */}
       <JsonLd data={generateFAQSchema(faqs)} />
 
@@ -69,7 +51,7 @@ export function FAQSection({
         <div className="mx-auto max-w-4xl">
           {/* Section Header */}
           <div className="mb-12 text-center md:text-left">
-            <h2 className="font-heading mb-4 text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
+            <h2 className="font-heading mb-4 text-3xl font-semibold text-foreground md:text-4xl lg:text-5xl">
               {title}
             </h2>
             {subtitle && (
@@ -80,7 +62,7 @@ export function FAQSection({
           </div>
 
           {/* FAQ Accordion List */}
-          <div className="divide-y divide-border border-t border-border">
+          <div className="divide-y divide-sage/30 border-t border-sage/30">
             {faqs.map((item) => {
               const isOpen = openItems.has(item.id)
 
@@ -98,7 +80,7 @@ export function FAQSection({
                     <div
                       className={cn(
                         "ml-4 flex-shrink-0 transition-[transform,color] duration-200",
-                        isOpen ? "rotate-180 text-primary" : "text-muted-foreground"
+                        isOpen ? "rotate-180 text-wine" : "text-sage"
                       )}
                       aria-hidden="true"
                     >
@@ -126,7 +108,7 @@ export function FAQSection({
 
           {/* Contact CTA Card */}
           {showContactCTA && (
-            <div className="mt-12 rounded-2xl bg-secondary/10 p-8 text-center">
+            <div className="mt-12 rounded-2xl bg-sage-light p-8 text-center">
               <h3 className="font-heading mb-2 text-xl font-semibold text-foreground">
                 Still have questions?
               </h3>
@@ -142,7 +124,7 @@ export function FAQSection({
                 </a>
                 <a
                   href={`mailto:${businessInfo.email}`}
-                  className="inline-flex items-center justify-center rounded-lg border border-primary px-6 py-3 font-medium text-primary transition-colors hover:bg-secondary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="inline-flex items-center justify-center rounded-lg border border-sage bg-blush-light px-6 py-3 font-medium text-foreground transition-colors hover:bg-sage-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   Email Us
                 </a>

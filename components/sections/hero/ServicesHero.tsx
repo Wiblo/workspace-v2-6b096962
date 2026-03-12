@@ -11,16 +11,16 @@ import { cn } from "@/lib/utils"
 const size: "large" | "medium" | "small" = "small"
 
 /** Overlay opacity: 0-100 (percentage) */
-const overlayOpacity = 20
+const overlayOpacity = 35
 
 /** Hero content - edit these values directly */
 const heroContent = {
-  subtitle: "What We Offer",
-  title: "Our Services",
-  backgroundImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop",
-  backgroundImageAlt: "Our services",
-  ctaText: "Contact Us",
-  ctaUrl: "/contact",
+  subtitle: "Move, Breathe, Transform",
+  title: "Our Classes",
+  backgroundImage: "/images/ceire-warrior-pose-beach.jpg",
+  backgroundImageAlt: "Ceire leading a warrior pose yoga class on the beach",
+  ctaText: "Book a Class",
+  ctaUrl: "/book",
 }
 
 // =============================================================================

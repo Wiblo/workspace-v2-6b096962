@@ -23,36 +23,36 @@ export interface FeaturesSectionProps {
 export function AboutFeatures({ className }: FeaturesSectionProps) {
   const blocks: FeatureBlock[] = [
     {
-      id: "value-1",
-      title: "Our Mission",
+      id: "journey",
+      title: "My Journey",
       description:
-        "We are driven by a simple yet powerful mission: to help our clients achieve their goals and improve their lives. Every decision we make is guided by this commitment to your success and well-being.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=800&fit=crop",
-      imageAlt: "Team collaboration meeting",
+        "From pirouettes in ballet class to warrior poses on the beach, my path has always been shaped by movement. Years of gymnastics, ballet, and dance gave me a deep appreciation for how the body moves, builds strength, and finds grace under pressure. When I discovered yoga, everything clicked \u2014 it brought together the discipline I loved with a mindfulness I had been searching for. That fusion of power and presence is at the heart of how I teach today.",
+      image: "/images/ceire-warrior-pose-beach.jpg",
+      imageAlt: "Ceire leading a warrior pose class on the beach",
       imagePosition: "right",
     },
     {
-      id: "value-2",
-      title: "Our Values",
+      id: "training",
+      title: "Training & Certification",
       description:
-        "Integrity, excellence, and compassion form the foundation of everything we do. We believe in treating every client with respect and providing honest, transparent service that you can trust.",
-      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=800&fit=crop",
-      imageAlt: "Professional team discussion",
+        "I travelled to Ubud, Bali to complete my 200-hour Yoga Teacher Training \u2014 an immersive experience of daily practice, anatomy study, and self-discovery in one of the most beautiful settings on earth. Alongside my YTT, I am certified in Alignment Yoga Sculpt, which blends precise alignment with strength-building flows, and I am a qualified Bounti Instructor, specialising in rebounding fitness. These diverse qualifications allow me to offer classes that are both dynamic and deeply intentional.",
+      image: "/images/ceire-ytt-certificate-half-body.jpg",
+      imageAlt: "Ceire holding her Yoga Teacher Training certificate in Bali",
       imagePosition: "left",
     },
     {
-      id: "value-3",
-      title: "Our Commitment",
+      id: "vision",
+      title: "The Soma Studio Vision",
       description:
-        "We are committed to continuous improvement and staying at the forefront of our industry. Our team regularly participates in training and education to ensure we provide you with the best possible service.",
-      image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=800&h=800&fit=crop",
-      imageAlt: "Professional development",
+        "Soma means \u201Cbody\u201D in Greek \u2014 and that is exactly where everything begins. Soma Studio was born from a desire to create a warm, inclusive space in Plettenberg Bay where people can reconnect with their bodies, quiet their minds, and leave feeling stronger than when they arrived. Whether you are here for a vigorous flow or a gentle stretch, the studio is designed to meet you where you are. My vision is simple: a community grounded in movement, breath, and belonging.",
+      image: "/images/ceire-standing-balance-bali-studio.jpg",
+      imageAlt: "Ceire in a standing balance pose at a Bali yoga studio",
       imagePosition: "right",
     },
   ]
 
   return (
-    <SectionWrapper className={cn("bg-background", className)}>
+    <SectionWrapper className={cn("bg-transparent", className)}>
       <Container>
         {blocks.map((block, index) => (
           <div key={block.id} className={cn(index > 0 && "mt-20 md:mt-32")}>

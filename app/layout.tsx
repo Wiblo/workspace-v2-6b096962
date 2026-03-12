@@ -1,13 +1,35 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import { Cormorant_Garamond, DM_Sans, Geist_Mono, Sora, Titan_One } from "next/font/google"
 import "./globals.css"
-// import { Navbar } from "@/components/layout/Navbar"
-// import { Footer } from "@/components/layout/Footer"
+import { Navbar } from "@/components/layout/Navbar"
+import { Footer } from "@/components/layout/Footer"
 import { JsonLd, generateLocalBusinessSchema } from "@/lib/seo/json-ld"
 import { generateRootMetadata } from "@/lib/seo/metadata"
 import { WibloDesignBridge } from "@/components/wiblo-design-bridge"
 
-const geistSans = Geist({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-cormorant",
+  display: "swap",
+})
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+})
+
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  display: "swap",
+})
+
+const titanOne = Titan_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-titan-one",
+  display: "swap",
 })
 
 const geistMono = Geist_Mono({
@@ -20,28 +42,16 @@ export const metadata = generateRootMetadata()
 /**
  * ROOT LAYOUT
  *
- * This layout wraps all pages. Customize the Navbar and Footer for your client's business.
- *
- * LAYOUT COMPONENTS (in components/layout/):
- * - Navbar - Site navigation header (uses lib/data/navigation.ts)
- * - Footer - Site footer with links, contact info, social (uses lib/data/business-info.ts)
+ * Fonts:
+ * - Cormorant Garamond (--font-cormorant / font-heading) — Elegant serif for headings
+ * - DM Sans (--font-dm-sans / font-sans) — Clean sans-serif for body text
+ * - Geist Mono (--font-geist-mono / font-mono) — Monospace for code
  *
  * BEFORE UNCOMMENTING NAVBAR & FOOTER:
  * 1. Update lib/data/business-info.ts with the client's business information
  * 2. Update lib/data/navigation.ts with the site's navigation structure
  * 3. Read docs/brand-guide.md for colors and typography
  * 4. Customize the Navbar and Footer components to match the brand
- *
- * EXAMPLE IMPLEMENTATION:
- * ```tsx
- * import { Navbar } from "@/components/layout/Navbar"
- * import { Footer } from "@/components/layout/Footer"
- *
- * // In the body:
- * <Navbar />
- * <main id="main-content">{children}</main>
- * <Footer />
- * ```
  */
 export default function RootLayout({
   children,
@@ -49,8 +59,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={geistSans.className}>
-      <body className={`${geistMono.variable} antialiased`}>
+    <html
+      lang="en"
+      className={`${dmSans.variable} ${cormorant.variable} ${sora.variable} ${titanOne.variable}`}
+    >
+      <body className={`${geistMono.variable} bg-blush font-sans antialiased`}>
         <WibloDesignBridge />
 
         {/* Skip link for keyboard navigation */}
@@ -64,13 +77,11 @@ export default function RootLayout({
         {/* LocalBusiness JSON-LD for SEO */}
         <JsonLd data={generateLocalBusinessSchema()} />
 
-        {/* TODO: Uncomment Navbar after customizing for the business */}
-        {/* <Navbar /> */}
+        <Navbar />
 
         <main id="main-content">{children}</main>
 
-        {/* TODO: Uncomment Footer after customizing for the business */}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   )

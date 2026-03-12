@@ -1,125 +1,119 @@
 /**
- * Services data - defines all services offered by the business.
+ * Services data - defines all classes offered by Soma Studio.
  * Used by: FeaturedServices, ServicesGrid, ServiceCard, /services/[slug] pages
- *
- * This data drives:
- * - Service cards on homepage (FeaturedServices)
- * - Services listing page (ServicesGrid)
- * - Individual service detail pages (ServiceDetailSection)
- * - Service JSON-LD schema
  */
 
 export interface Service {
-  /** URL-friendly identifier (e.g., "deep-tissue-massage") */
   slug: string
-  /** Display name */
   name: string
-  /** Short description for cards (1-2 sentences) */
   shortDescription: string
-  /** Full description for detail page (can be multiple paragraphs) */
   description: string
-  /** Lucide icon name (e.g., "Heart", "Zap", "Clock") */
   icon?: string
-  /** Image path or URL */
   image?: string
-  /** Alt text for image */
   imageAlt?: string
-  /** Show on homepage featured section */
   featured?: boolean
-  /** Duration (e.g., "60 minutes") */
   duration?: string
-  /** Price (e.g., "$80" or "From $50") */
   price?: string
-  /** List of benefits/features */
   benefits?: string[]
-  /** Who this service is ideal for */
   idealFor?: string[]
 }
 
-/**
- * All services offered by the business.
- * Edit this array to add, remove, or modify services.
- */
 export const services: Service[] = [
   {
-    slug: "service-one",
-    name: "Service One",
+    slug: "vinyasa-yoga",
+    name: "Vinyasa Yoga",
     shortDescription:
-      "Brief description of this service. Explain the key benefit in one or two sentences.",
+      "A dynamic, flowing practice that links breath with movement. Build strength, flexibility, and mindfulness in every class.",
     description:
-      "Full description of Service One. Explain what the service includes, who it's for, and what benefits customers can expect.\n\nThis text appears on the individual service page. You can include multiple paragraphs to provide comprehensive information about the service.",
-    icon: "Star",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
-    imageAlt: "Service one image description",
+      "Vinyasa is a flowing style of yoga where poses are linked together with the breath, creating a moving meditation. Each class builds heat, strength, and flexibility while cultivating body awareness and mental focus.\n\nClasses are designed to be accessible for all levels, with modifications offered throughout. Whether you are building a foundation or deepening your practice, Vinyasa will meet you where you are.",
+    icon: "Wind",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop",
+    imageAlt: "Person flowing through a yoga vinyasa sequence",
     featured: true,
     duration: "60 min",
-    price: "$100",
     benefits: [
-      "First benefit of this service",
-      "Second benefit of this service",
-      "Third benefit of this service",
-      "Fourth benefit of this service",
+      "Builds strength and flexibility",
+      "Improves cardiovascular fitness",
+      "Reduces stress and anxiety",
+      "Enhances body awareness and balance",
     ],
     idealFor: [
-      "First time clients",
-      "Specific condition",
-      "Another use case",
+      "All levels",
+      "Those who enjoy dynamic movement",
+      "Stress relief",
     ],
   },
   {
-    slug: "service-two",
-    name: "Service Two",
+    slug: "alignment-yoga-sculpt",
+    name: "Alignment Yoga Sculpt",
     shortDescription:
-      "Brief description of this service. Explain the key benefit in one or two sentences.",
+      "Alignment-focused yoga with sculpting and toning elements. Precision meets strength for a full-body workout on the mat.",
     description:
-      "Full description of Service Two. Explain what the service includes, who it's for, and what benefits customers can expect.\n\nThis text appears on the individual service page.",
-    icon: "Heart",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop",
-    imageAlt: "Service two image description",
+      "Alignment Yoga Sculpt combines precise yoga alignment with targeted sculpting exercises to build lean muscle and improve posture. This class focuses on form and technique, ensuring you get the most out of every pose.\n\nDrawing from Ceire's background in gymnastics and dance, this class emphasises body control and muscular engagement while maintaining the mindfulness of a yoga practice.",
+    icon: "Target",
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop",
+    imageAlt: "Yoga alignment practice with sculpting poses",
+    featured: true,
+    duration: "55 min",
+    benefits: [
+      "Improves posture and alignment",
+      "Builds lean muscle definition",
+      "Increases core strength",
+      "Enhances body control and awareness",
+    ],
+    idealFor: [
+      "All levels",
+      "Those seeking a toning workout",
+      "Improving posture",
+    ],
+  },
+  {
+    slug: "yin-yoga",
+    name: "Yin Yoga",
+    shortDescription:
+      "A slow, meditative practice with deep stretches held for longer. Perfect for restoration, flexibility, and letting go.",
+    description:
+      "Yin Yoga is a slow-paced, meditative practice where poses are held for 3 to 5 minutes, targeting the deep connective tissues, ligaments, and fascia. This class is deeply restorative and provides the perfect counterbalance to more active practices and busy lives.\n\nEach session creates space for stillness and introspection, helping to release tension held deep in the body and calm the nervous system.",
+    icon: "Leaf",
+    image: "https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?w=800&h=600&fit=crop",
+    imageAlt: "Peaceful yin yoga practice with deep stretches",
+    featured: true,
+    duration: "75 min",
+    benefits: [
+      "Deep flexibility and joint mobility",
+      "Calms the nervous system",
+      "Releases deep-held tension",
+      "Promotes mindfulness and stillness",
+    ],
+    idealFor: [
+      "All levels including beginners",
+      "Recovery and restoration",
+      "Those experiencing stress or tightness",
+    ],
+  },
+  {
+    slug: "rebounding",
+    name: "Rebounding",
+    shortDescription:
+      "A high-energy, low-impact fitness class on mini trampolines. Fun, effective cardio that is easy on the joints.",
+    description:
+      "Rebounding is a fun, high-energy fitness class performed on individual mini trampolines. This low-impact workout improves cardiovascular health, balance, and coordination while being gentle on the joints.\n\nAs a certified Bounti Instructor, Ceire brings infectious energy and expert programming to every class. Expect music, movement, and a serious sweat.",
+    icon: "Zap",
+    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop",
+    imageAlt: "High-energy rebounding fitness class",
     featured: true,
     duration: "45 min",
-    price: "$80",
     benefits: [
-      "First benefit of this service",
-      "Second benefit of this service",
-      "Third benefit of this service",
+      "Low-impact cardiovascular workout",
+      "Improves balance and coordination",
+      "Boosts lymphatic system health",
+      "Burns calories while having fun",
     ],
     idealFor: [
-      "Returning clients",
-      "Maintenance care",
+      "All fitness levels",
+      "Those wanting fun cardio",
+      "Joint-friendly exercise",
     ],
-  },
-  {
-    slug: "service-three",
-    name: "Service Three",
-    shortDescription:
-      "Brief description of this service. Explain the key benefit in one or two sentences.",
-    description:
-      "Full description of Service Three. Explain what the service includes, who it's for, and what benefits customers can expect.",
-    icon: "Zap",
-    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&h=600&fit=crop",
-    imageAlt: "Service three image description",
-    featured: true,
-    duration: "30 min",
-    price: "$60",
-    benefits: [
-      "First benefit of this service",
-      "Second benefit of this service",
-    ],
-  },
-  {
-    slug: "service-four",
-    name: "Service Four",
-    shortDescription:
-      "Brief description of this service. Explain the key benefit in one or two sentences.",
-    description:
-      "Full description of Service Four. Explain what the service includes, who it's for, and what benefits customers can expect.",
-    icon: "Shield",
-    image: "https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=800&h=600&fit=crop",
-    imageAlt: "Service four image description",
-    featured: false,
-    duration: "90 min",
-    price: "$150",
   },
 ]
 
@@ -127,34 +121,18 @@ export const services: Service[] = [
 // Helper Functions
 // ============================================================================
 
-/**
- * Get a single service by its slug.
- * Returns undefined if not found.
- */
 export function getServiceBySlug(slug: string): Service | undefined {
   return services.find((service) => service.slug === slug)
 }
 
-/**
- * Get all services marked as featured.
- * Used for homepage featured services section.
- */
 export function getFeaturedServices(): Service[] {
   return services.filter((service) => service.featured)
 }
 
-/**
- * Get all services.
- * Used for services listing page.
- */
 export function getAllServices(): Service[] {
   return services
 }
 
-/**
- * Get all service slugs.
- * Used for generateStaticParams in dynamic routes.
- */
 export function getAllServiceSlugs(): string[] {
   return services.map((service) => service.slug)
 }

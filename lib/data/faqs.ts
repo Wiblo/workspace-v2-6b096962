@@ -1,60 +1,50 @@
 /**
- * FAQ data - frequently asked questions and answers.
+ * FAQ data for Soma Studio.
  * Used by: FAQSection component (includes FAQPage JSON-LD schema)
- *
- * The FAQSection component automatically generates JSON-LD structured data
- * from this array, so search engines can display rich FAQ results.
  */
 
 export interface FAQ {
-  /** Unique identifier for accordion state */
   id: string
-  /** The question being asked */
   question: string
-  /** The answer to the question */
   answer: string
 }
 
-/**
- * Frequently asked questions.
- * Edit this array to add, remove, or modify FAQs.
- *
- * Tips:
- * - Keep answers concise but complete
- * - Use natural language that matches how customers ask
- * - Order by most commonly asked first
- * - Include questions that address common objections
- */
 export const faqs: FAQ[] = [
   {
     id: "faq-1",
-    question: "What is your first frequently asked question?",
+    question: "Do I need experience to attend a class?",
     answer:
-      "This is the answer to your first FAQ. Provide a clear, helpful response that addresses the customer's concern. Keep it concise but complete.",
+      "Not at all! All classes at Soma Studio are designed to be accessible for beginners and experienced practitioners alike. Ceire offers modifications throughout every class so you can work at your own level. Just bring an open mind and a willingness to move.",
   },
   {
     id: "faq-2",
-    question: "What is your second frequently asked question?",
+    question: "What should I bring to class?",
     answer:
-      "This is the answer to your second FAQ. You can include details about your services, policies, or anything customers commonly ask about.",
+      "Wear comfortable clothing that allows you to move freely. Bring a water bottle and a towel. Yoga mats are available at the studio, but you are welcome to bring your own. For Rebounding classes, supportive athletic shoes are recommended.",
   },
   {
     id: "faq-3",
-    question: "What is your third frequently asked question?",
+    question: "How do I book a class?",
     answer:
-      "This is the answer to your third FAQ. Consider including information about pricing, availability, or what customers can expect.",
+      "You can book classes directly through our website or reach out via WhatsApp at +27 78 511 1889. We recommend booking in advance as spaces are limited to ensure everyone gets personal attention.",
   },
   {
     id: "faq-4",
-    question: "What is your fourth frequently asked question?",
+    question: "Do you offer private sessions?",
     answer:
-      "This is the answer to your fourth FAQ. Address common concerns or objections that potential customers might have.",
+      "Yes! Ceire offers private 1-on-1 sessions for those who prefer personalised attention or have specific goals they would like to work towards. Contact us to arrange a private session at a time that suits you.",
   },
   {
     id: "faq-5",
-    question: "What is your fifth frequently asked question?",
+    question: "What is Rebounding and do I need to be fit to try it?",
     answer:
-      "This is the answer to your fifth FAQ. Include any additional information that helps customers make a decision.",
+      "Rebounding is a fun, low-impact cardio workout performed on individual mini trampolines. It is suitable for all fitness levels because you control the intensity. The trampoline absorbs most of the impact, making it much gentler on your joints than running or other high-impact exercise.",
+  },
+  {
+    id: "faq-6",
+    question: "What styles of yoga do you offer?",
+    answer:
+      "We offer Vinyasa Yoga (dynamic, breath-linked flow), Alignment Yoga Sculpt (precision alignment with toning elements), and Yin Yoga (slow, deep-stretch restorative practice). Each style offers different benefits, and many of our members enjoy mixing them throughout the week.",
   },
 ]
 
@@ -62,16 +52,10 @@ export const faqs: FAQ[] = [
 // Helper Functions
 // ============================================================================
 
-/**
- * Get all FAQs.
- */
 export function getAllFAQs(): FAQ[] {
   return faqs
 }
 
-/**
- * Get a subset of FAQs (e.g., for homepage preview).
- */
 export function getFAQsPreview(count: number = 3): FAQ[] {
   return faqs.slice(0, count)
 }

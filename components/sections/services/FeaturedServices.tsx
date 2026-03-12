@@ -27,9 +27,9 @@ export interface FeaturedServicesProps {
  */
 function ServiceCarouselCard({ service }: { service: Service }) {
   return (
-    <div className="group relative w-[264px] shrink-0 snap-start overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow duration-300 hover:shadow-lg md:w-[296px]">
+    <div className="group relative w-[264px] shrink-0 snap-start overflow-hidden rounded-2xl border border-sage/30 bg-blush-light shadow-sm transition-shadow duration-300 hover:shadow-lg md:w-[296px]">
       {/* Image */}
-      <div className="relative h-[248px] w-full overflow-hidden bg-muted md:h-[280px]">
+      <div className="relative h-[248px] w-full overflow-hidden bg-sage-light md:h-[280px]">
         {service.image ? (
           <Image
             src={service.image}
@@ -39,7 +39,7 @@ function ServiceCarouselCard({ service }: { service: Service }) {
             sizes="(max-width: 768px) 264px, 296px"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-muted">
+          <div className="flex h-full w-full items-center justify-center bg-sage-light">
             <span className="text-muted-foreground">No image</span>
           </div>
         )}
@@ -53,7 +53,7 @@ function ServiceCarouselCard({ service }: { service: Service }) {
             {service.name}
           </h3>
           {service.duration && (
-            <span className="shrink-0 text-sm font-medium text-primary">
+            <span className="shrink-0 text-sm font-medium text-wine">
               {service.duration}
             </span>
           )}
@@ -88,9 +88,9 @@ function ServiceCarouselCard({ service }: { service: Service }) {
  * Displays services marked as `featured: true` in services data.
  */
 export function FeaturedServices({
-  title = "Most Popular Services",
-  subtitle = "Discover the treatments our patients love most.",
-  ctaText = "View All Services",
+  title = "Our Classes",
+  subtitle = "From flowing Vinyasa to high-energy Rebounding, find the class that moves you.",
+  ctaText = "View All Classes",
   ctaUrl = "/services",
   className,
 }: FeaturedServicesProps) {
@@ -135,10 +135,10 @@ export function FeaturedServices({
   }
 
   return (
-    <SectionWrapper className={cn("bg-background", className)}>
+    <SectionWrapper className={cn("bg-transparent", className)}>
       {/* Header */}
       <div className="mx-auto mb-12 max-w-2xl px-6 text-center md:px-8">
-        <h2 className="font-heading mb-4 text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
+        <h2 className="font-heading mb-4 text-3xl font-semibold text-foreground md:text-4xl lg:text-5xl">
           {title}
         </h2>
         {subtitle && (
@@ -179,8 +179,8 @@ export function FeaturedServices({
             className={cn(
               "flex h-10 w-10 items-center justify-center rounded-full border-2 transition-colors",
               canScrollLeft
-                ? "border-border text-muted-foreground hover:border-primary hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                : "cursor-not-allowed border-border/50 text-muted-foreground/50"
+                ? "border-sage text-sage hover:border-primary hover:bg-sage-light hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                : "cursor-not-allowed border-sage/30 text-sage/40"
             )}
             aria-label="Previous services"
           >
@@ -192,8 +192,8 @@ export function FeaturedServices({
             className={cn(
               "flex h-10 w-10 items-center justify-center rounded-full border-2 transition-colors",
               canScrollRight
-                ? "border-border text-muted-foreground hover:border-primary hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                : "cursor-not-allowed border-border/50 text-muted-foreground/50"
+                ? "border-sage text-sage hover:border-primary hover:bg-sage-light hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                : "cursor-not-allowed border-sage/30 text-sage/40"
             )}
             aria-label="Next services"
           >
@@ -207,7 +207,7 @@ export function FeaturedServices({
         <div className="mt-10 flex justify-center px-6 md:px-8">
           <Link
             href={ctaUrl}
-            className="group inline-flex min-h-12 items-center justify-center rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground transition-[background-color,border-radius] hover:rounded-xl hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            className="group inline-flex min-h-12 items-center justify-center rounded-lg bg-[var(--play-button-bg)] px-6 py-3 font-medium text-[var(--play-button-fg)] transition-[filter] hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
             <span className="flex items-center gap-1">
               {ctaText}

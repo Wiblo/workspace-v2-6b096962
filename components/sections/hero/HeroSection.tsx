@@ -4,51 +4,31 @@ import { ChevronRight, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { businessInfo } from "@/lib/data/business-info"
 
-// =============================================================================
-// CONFIGURATION - Edit these variables to customize the hero
-// =============================================================================
-
-/** Hero height: "large" | "medium" | "small" */
 const size: "large" | "medium" | "small" = "large"
+const overlayOpacity = 30
 
-/** Overlay opacity: 0-100 (percentage) */
-const overlayOpacity = 20
-
-/** Hero content - edit these values directly */
 const heroContent = {
-  subtitle: `Welcome to ${businessInfo.name}`,
-  title: "Your Compelling Headline Goes Here",
-  backgroundImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop",
-  backgroundImageAlt: "Professional business environment",
-  ctaText: "Get Started",
+  subtitle: "Yoga & Movement in Plettenberg Bay",
+  title: "Find Your Balance",
+  backgroundImage: "/images/ceire-seated-pose-bali-studio-wide.png",
+  backgroundImageAlt: "Ceire in a seated yoga pose at a bamboo studio in Bali during golden hour",
+  ctaText: "Book a Class",
   ctaUrl: businessInfo.bookingUrl || "/contact",
 }
 
-// =============================================================================
-// SIZE CLASSES
-// =============================================================================
-
 const sizeClasses = {
   large:
-    "mx-auto mt-4 flex max-h-188 min-h-125 max-w-7xl flex-col items-center p-2 pt-0 md:h-[calc(100vh-136px)] md:min-h-160 xl:h-[calc(110vh-136px)] xl:max-w-none 2xl:px-48",
+    "mx-auto mt-4 flex max-h-188 min-h-125 max-w-[90rem] flex-col items-center p-2 pt-0 md:h-[calc(100vh-136px)] md:min-h-160 xl:h-[calc(110vh-136px)]",
   medium:
-    "mx-auto mt-4 flex max-h-140 min-h-100 max-w-7xl flex-col items-center p-2 pt-0 md:min-h-120 xl:max-w-none 2xl:px-48",
+    "mx-auto mt-4 flex max-h-140 min-h-100 max-w-[90rem] flex-col items-center p-2 pt-0 md:min-h-120",
   small:
-    "mx-auto mt-4 flex max-h-100 min-h-80 max-w-7xl flex-col items-center p-2 pt-0 md:min-h-80 xl:max-w-none 2xl:px-48",
+    "mx-auto mt-4 flex max-h-100 min-h-80 max-w-[90rem] flex-col items-center p-2 pt-0 md:min-h-80",
 }
-
-// =============================================================================
-// COMPONENT
-// =============================================================================
 
 export interface HeroSectionProps {
   className?: string
 }
 
-/**
- * Generic hero section with full-width background image.
- * Configuration is done via variables at the top of this file.
- */
 export function HeroSection({ className }: HeroSectionProps) {
   return (
     <section className={cn(sizeClasses[size], className)}>
@@ -63,7 +43,6 @@ export function HeroSection({ className }: HeroSectionProps) {
             priority
             sizes="100vw"
           />
-          {/* Overlay */}
           <div
             className="absolute inset-0"
             style={{ backgroundColor: `rgba(0, 0, 0, ${overlayOpacity / 100})` }}
@@ -74,18 +53,13 @@ export function HeroSection({ className }: HeroSectionProps) {
         <div className="relative flex h-full flex-1 flex-col justify-end gap-8 p-8 pt-52 lg:p-20 lg:pb-20">
           <div className="max-w-200 bg-transparent">
             <div className="flex flex-col gap-6 text-balance">
-              {/* Subtitle */}
               <span className="text-white">
                 <span className="border-l-4 border-primary pl-4 text-lg font-medium md:text-xl">
                   {heroContent.subtitle}
                 </span>
               </span>
 
-              {/* Headline */}
-              <h1
-                className="font-heading text-3xl leading-tight text-white md:text-4xl lg:text-5xl"
-                style={{ fontWeight: 700 }}
-              >
+              <h1 className="font-heading text-4xl leading-tight text-white md:text-5xl lg:text-6xl font-semibold">
                 {heroContent.title}
               </h1>
             </div>
@@ -95,8 +69,9 @@ export function HeroSection({ className }: HeroSectionProps) {
           <div className="flex">
             <Link
               href={heroContent.ctaUrl}
-              className="group relative flex min-h-12 items-center justify-center rounded-lg bg-primary px-6 py-3 font-medium text-white transition-colors ease-in-out hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="group relative flex min-h-12 items-center justify-center rounded-lg bg-[var(--play-button-bg)] px-6 py-3 font-medium text-[var(--play-button-fg)] transition-[filter] ease-in-out hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
+              <span className="pointer-events-none absolute inset-0 rounded-lg bg-black/10 opacity-0 transition-opacity group-hover:opacity-100"></span>
               <span className="flex flex-1 items-center justify-center gap-x-2">
                 <span className="flex flex-row items-center gap-x-1">
                   {heroContent.ctaText}

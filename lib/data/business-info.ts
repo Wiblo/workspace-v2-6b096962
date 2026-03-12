@@ -6,74 +6,71 @@
  */
 export const businessInfo = {
   // Core Business Details
-  name: "Your Business Name",
-  tagline: "Your compelling tagline goes here",
+  name: "Soma Studio",
+  tagline: "Yoga & Movement Studio",
   description:
-    "A brief description of what your business does and who you serve. This appears in the footer and meta descriptions.",
+    "A yoga and movement studio in Plettenberg Bay, South Africa. Offering Vinyasa, Yin, Alignment Yoga Sculpt, and Rebounding classes for all levels.",
 
   // Contact Information
-  phone: "(555) 000-0000",
-  phoneSecondary: "", // Optional secondary phone number
-  email: "hello@example.com",
+  phone: "+27 78 511 1889",
+  phoneSecondary: "",
+  email: "hello@studiosoma.co.za",
 
   // Physical Location
   address: {
-    street: "123 Main Street",
-    area: "", // Optional: neighborhood, suite, or building name
-    city: "Your City",
-    state: "ST",
-    zip: "00000",
-    country: "US",
+    street: "Plettenberg Bay",
+    area: "",
+    city: "Plettenberg Bay",
+    state: "Western Cape",
+    zip: "",
+    country: "ZA",
   },
 
-  // Coordinates for maps (optional - set to 0 if unknown)
+  // Coordinates for maps (Plettenberg Bay centre)
   geo: {
-    latitude: 0,
-    longitude: 0,
+    latitude: -34.0527,
+    longitude: 23.3716,
   },
 
   // Google Maps configuration
   maps: {
-    /** Google Maps Place ID (find at: https://developers.google.com/maps/documentation/places/web-service/place-id) */
     placeId: "",
-    /** Display name for the location on maps */
-    locationName: "Your Business Name",
-    /** Google Maps API key (optional, for embed without place ID) */
+    locationName: "Soma Studio",
     apiKey: "",
   },
 
   // Business Hours
   hours: {
-    monday: "9:00 AM - 5:00 PM",
-    tuesday: "9:00 AM - 5:00 PM",
-    wednesday: "9:00 AM - 5:00 PM",
-    thursday: "9:00 AM - 5:00 PM",
-    friday: "9:00 AM - 5:00 PM",
-    saturday: "Closed",
-    sunday: "Closed",
+    monday: "6:00 AM - 6:00 PM",
+    tuesday: "6:00 AM - 6:00 PM",
+    wednesday: "6:00 AM - 6:00 PM",
+    thursday: "6:00 AM - 6:00 PM",
+    friday: "6:00 AM - 6:00 PM",
+    saturday: "6:00 AM - 6:00 PM",
+    sunday: "6:00 AM - 12:00 PM",
   } as Record<string, string>,
 
   // Timezone for open/closed status calculation
-  timezone: "America/New_York",
+  timezone: "Africa/Johannesburg",
 
-  // Social Media (leave empty string if not used)
+  // Social Media
   social: {
     facebook: "",
-    instagram: "",
+    instagram: "https://www.instagram.com/somastudioplett",
     twitter: "",
     linkedin: "",
     youtube: "",
   },
 
   // Website
-  url: "https://example.com",
-  logo: "/logo.png",
+  url: "https://studiosoma.co.za",
+  logo: "",
 
-  // Booking (leave empty string if no booking system)
-  bookingUrl: "https://example.com/book",
-  showBookingButton: true, // Set to false to hide booking buttons in navbar/footer
+  // Booking
+  bookingUrl: "/book",
+  showBookingButton: true,
 
-  // Optional: Price range for schema.org ($, $$, $$$, $$$$)
+  // Optional: Price range for schema.org
   priceRange: "$$",
 }
 
@@ -141,6 +138,6 @@ export function getFullAddress(): string {
   const { address } = businessInfo
   const parts = [address.street]
   if (address.area) parts.push(address.area)
-  parts.push(`${address.city}, ${address.state} ${address.zip}`)
+  parts.push(`${address.city}, ${address.state} ${address.zip}`.trim())
   return parts.join(", ")
 }

@@ -13,14 +13,14 @@ export interface AboutFullSectionProps {
  */
 export function AboutFullSection({ className }: AboutFullSectionProps) {
   return (
-    <SectionWrapper className={cn("bg-background", className)}>
+    <SectionWrapper className={cn("bg-transparent", className)}>
       <Container>
         <div className="flex flex-col items-center gap-10 md:flex-row md:gap-20 xl:gap-[140px]">
           {/* Desktop Image */}
           <div className="relative hidden aspect-square w-full shrink-0 overflow-hidden rounded-4xl md:flex md:max-h-[300px] md:max-w-[300px] xl:max-h-[520px] xl:max-w-[520px]">
             <Image
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=800&fit=crop"
-              alt="Our team working together"
+              src="/images/ceire-headshot-portrait.jpg"
+              alt="Ceire Cunningham, yoga instructor and founder of Soma Studio"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1280px) 300px, 520px"
@@ -32,16 +32,16 @@ export function AboutFullSection({ className }: AboutFullSectionProps) {
           <div className="flex w-full flex-col gap-8">
             {/* Heading */}
             <div className="flex w-full justify-center md:justify-start">
-              <h1 className="font-heading text-balance text-center text-3xl font-bold text-foreground md:text-left md:text-4xl lg:text-5xl">
-                About Us
+              <h1 className="font-heading text-balance text-center text-3xl font-light tracking-tight text-foreground md:text-left md:text-4xl lg:text-5xl">
+                Meet Ceire
               </h1>
             </div>
 
             {/* Mobile Image */}
             <div className="relative aspect-square w-full shrink-0 overflow-hidden rounded-4xl md:hidden">
               <Image
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=800&fit=crop"
-                alt="Our team working together"
+                src="/images/ceire-headshot-portrait.jpg"
+                alt="Ceire Cunningham, yoga instructor and founder of Soma Studio"
                 fill
                 className="object-cover"
                 sizes="100vw"
@@ -51,22 +51,29 @@ export function AboutFullSection({ className }: AboutFullSectionProps) {
             {/* Paragraphs */}
             <div className="flex w-full flex-col gap-4">
               <p className="text-lg leading-relaxed text-muted-foreground">
-                We are a dedicated team of professionals committed to delivering
-                exceptional service and results. With years of experience in our
-                field, we have developed a deep understanding of our clients&apos;
-                needs and how to meet them effectively.
+                Movement has been part of my life for as long as I can remember.
+                Growing up, I trained in gymnastics, ballet, and dance &mdash;
+                disciplines that taught me the beauty of control, expression, and
+                what the body is truly capable of. That love for movement never
+                left me; it simply evolved.
               </p>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                Our mission is to provide personalized solutions that make a real
-                difference in people&apos;s lives. We believe in building lasting
-                relationships with our clients based on trust, transparency, and
-                mutual respect.
+                My yoga journey led me to Ubud, Bali, where I completed my
+                200-hour Yoga Teacher Training surrounded by rice fields and
+                open-air studios. It was a transformative experience that
+                deepened my understanding of alignment, breathwork, and the
+                connection between body and mind. I also hold certifications in
+                Alignment Yoga Sculpt and as a qualified Bounti Instructor,
+                blending strength, flexibility, and mindful movement into every
+                class I teach.
               </p>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                What sets us apart is our commitment to continuous improvement and
-                staying at the forefront of industry developments. We invest in
-                ongoing education and training to ensure we always deliver the
-                highest quality service possible.
+                Now, back home in Plettenberg Bay, I have poured that passion
+                into Soma Studio &mdash; a welcoming space for people of all
+                levels to explore yoga, build strength, and find stillness. Whether
+                you are stepping onto the mat for the first time or deepening an
+                existing practice, my goal is to guide you with warmth,
+                intention, and a genuine love for what movement can do.
               </p>
             </div>
           </div>

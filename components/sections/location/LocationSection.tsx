@@ -126,7 +126,7 @@ export function LocationSection({
   }, [])
 
   return (
-    <SectionWrapper className={cn("bg-background", className)}>
+    <SectionWrapper className={cn("bg-transparent", className)}>
       <Container>
         {/* Section Header */}
         <div className="mb-12 flex w-full items-center justify-center md:justify-between">
@@ -136,7 +136,7 @@ export function LocationSection({
         </div>
 
         {/* Map and Info Card */}
-        <div className="overflow-hidden rounded-4xl bg-secondary/10 p-2">
+        <div className="overflow-hidden rounded-4xl bg-white p-2">
           <div className="flex w-full flex-col gap-2 lg:flex-row">
             {/* Google Maps Embed */}
             <div className="h-[300px] w-full shrink-0 overflow-hidden rounded-4xl bg-transparent lg:h-[390px] lg:w-[450px]">
